@@ -1,169 +1,84 @@
+game.Lighting:ClearAllChildren()
+Cc = Instance.new("ColorCorrectionEffect")
+Be = Instance.new("BloomEffect")
+Dofe = Instance.new("DepthOfFieldEffect")
+Sre = Instance.new("SunRaysEffect")
+Sky = Instance.new("Sky")
+At = Instance.new("Atmosphere")
 
-local ScreenGui = Instance.new("ScreenGui")
-local Shader = Instance.new("Folder")
-local Frame = Instance.new("Frame")
-local TextButton = Instance.new("TextButton")
-local TextLabel = Instance.new("TextLabel")
-local Frame2 = Instance.new("Frame")
-local TextButton_2 = Instance.new("TextButton")
-local TextBox = Instance.new("TextBox")
+Cc.Parent = game.Lighting
+Be.Parent = game.Lighting
+Dofe.Parent = game.Lighting
+Sre.Parent = game.Lighting
+Sky.Parent = game.Lighting
+At.Parent = game.Lighting
 
---Properties:
+toggol = false
 
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+--Dofe
+Dofe.FarIntensity = 1
+Dofe.FocusDistance = 44.44
+Dofe.InFocusRadius = 10
+Dofe.NearIntensity = 0
+--Be
+Be.Enabled = true
+Be.Intensity = 1
+Be.Size = 0
+Be.Threshold = 0.861
+--Sre
+Sre.Enabled = true
+Sre.Intensity = 0.352
+Sre.Spread = 1
+--Cc
+Cc.Saturation = 0.6
+Cc.TintColor = Color3.fromRGB(255, 251, 201)
+--Sky
+Sky.CelestialBodiesShown = true
+Sky.MoonAngularSize = 11
+Sky.MoonTextureId = "rbxasset://sky/moon.jpg"
+Sky.SkyboxBk = "http://www.roblox.com/asset/?id=144933338"
+Sky.SkyboxDn = "http://www.roblox.com/asset/?id=144931530"
+Sky.SkyboxFt = "http://www.roblox.com/asset/?id=144933262"
+Sky.SkyboxLf = "http://www.roblox.com/asset/?id=144933244"
+Sky.SkyboxRt = "http://www.roblox.com/asset/?id=144933299"
+Sky.SkyboxUp = "http://www.roblox.com/asset/?id=144931564"
+Sky.StarCount = 1500
+Sky.SunAngularSize = 5
+Sky.SunTextureId = "rbxasset://sky/sun.jpg"
+--At
+At.Density = 0
+At.Offset = 0
+At.Decay = Color3.fromRGB(97, 63, 16)
+At.Color = Color3.fromRGB(6, 252, 252)
+At.Glare = 1.67
+At.Haze = 2.22
 
-Shader.Name = "Shader"
-Shader.Parent = ScreenGui
 
-Frame.Parent = Shader
-Frame.BackgroundColor3 = Color3.fromRGB(62, 88, 98)
-Frame.BorderColor3 = Color3.fromRGB(62, 87, 98)
-Frame.Position = UDim2.new(0.819338441, 0, 0.483775824, 0)
-Frame.Size = UDim2.new(0, 213, 0, 67)
-Frame.Style = Enum.FrameStyle.DropShadow
 
-TextButton.Parent = Frame
-TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.Position = UDim2.new(0.0617377758, 0, 1.04900849, 0)
-TextButton.Size = UDim2.new(0, 172, 0, 34)
-TextButton.Style = Enum.ButtonStyle.RobloxRoundButton
-TextButton.Font = Enum.Font.SourceSans
-TextButton.Text = "Settings"
-TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.TextSize = 14.000
-TextButton.TextWrapped = true
+frame = script.Parent
+frame.Draggable = true
+frame.Active = true
+frame.Selectable = true
 
-TextLabel.Parent = Frame
-TextLabel.BackgroundColor3 = Color3.fromRGB(62, 88, 98)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.BorderColor3 = Color3.fromRGB(62, 87, 98)
-TextLabel.Position = UDim2.new(0.100455083, 0, 0.131290436, 0)
-TextLabel.Size = UDim2.new(0, 158, 0, 39)
-TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "Script For  volo_plays2"
-TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
 
-Frame2.Name = "Frame2"
-Frame2.Parent = Shader
-Frame2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame2.Position = UDim2.new(0.0398642905, 0, 0.10619469, 0)
-Frame2.Size = UDim2.new(0, 276, 0, 521)
-Frame2.Visible = false
-Frame2.Style = Enum.FrameStyle.DropShadow
+script.Parent:FindFirstChild("TextButton").Activated:Connect(function()
+	if toggol == false then
+		toggol = true
+		print("Now true")
+		script.Parent.Parent:FindFirstChild("Frame2").Visible = true
+	elseif toggol == true then
+		toggol = false
+		print("Now false")
+		script.Parent.Parent:FindFirstChild("Frame2").Visible = false
+	end
+end)
 
-TextButton_2.Parent = Frame2
-TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_2.Position = UDim2.new(0.355217814, 0, 0.933607817, 0)
-TextButton_2.Size = UDim2.new(0, 175, 0, 40)
-TextButton_2.Style = Enum.ButtonStyle.RobloxRoundButton
-TextButton_2.Font = Enum.Font.SourceSans
-TextButton_2.Text = "Kill Script"
-TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_2.TextScaled = true
-TextButton_2.TextSize = 14.000
-TextButton_2.TextWrapped = true
-
-TextBox.Parent = Frame2
-TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextBox.BackgroundTransparency = 0.850
-TextBox.Size = UDim2.new(0, 200, 0, 50)
-TextBox.Font = Enum.Font.SourceSans
-TextBox.Text = "Gravity (Only For FlightPoint)"
-TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextBox.TextSize = 14.000
-
--- Scripts:
-
-local function ITUXXA_fake_script() -- Frame.LocalScript 
-	local script = Instance.new('LocalScript', Frame)
-
+script.Parent.Parent:FindFirstChild("Frame2").TextButton.Activated:Connect(function()
+	script.Parent.Parent.Parent:FindFirstChild("Shader"):ClearAllChildren()
 	game.Lighting:ClearAllChildren()
-	Cc = Instance.new("ColorCorrectionEffect")
-	Be = Instance.new("BloomEffect")
-	Dofe = Instance.new("DepthOfFieldEffect")
-	Sre = Instance.new("SunRaysEffect")
-	Sky = Instance.new("Sky")
-	At = Instance.new("Atmosphere")
-	
-	Cc.Parent = game.Lighting
-	Be.Parent = game.Lighting
-	Dofe.Parent = game.Lighting
-	Sre.Parent = game.Lighting
-	Sky.Parent = game.Lighting
-	At.Parent = game.Lighting
-	
-	toggol = false
-	
-	--Dofe
-	Dofe.FarIntensity = 1
-	Dofe.FocusDistance = 44.44
-	Dofe.InFocusRadius = 10
-	Dofe.NearIntensity = 0
-	--Be
-	Be.Enabled = true
-	Be.Intensity = 1
-	Be.Size = 0
-	Be.Threshold = 0.861
-	--Sre
-	Sre.Enabled = true
-	Sre.Intensity = 0.352
-	Sre.Spread = 1
-	--Cc
-	Cc.Saturation = 0.6
-	Cc.TintColor = Color3.fromRGB(255, 251, 201)
-	--Sky
-	Sky.CelestialBodiesShown = true
-	Sky.MoonAngularSize = 11
-	Sky.MoonTextureId = "rbxasset://sky/moon.jpg"
-	Sky.SkyboxBk = "http://www.roblox.com/asset/?id=144933338"
-	Sky.SkyboxDn = "http://www.roblox.com/asset/?id=144931530"
-	Sky.SkyboxFt = "http://www.roblox.com/asset/?id=144933262"
-	Sky.SkyboxLf = "http://www.roblox.com/asset/?id=144933244"
-	Sky.SkyboxRt = "http://www.roblox.com/asset/?id=144933299"
-	Sky.SkyboxUp = "http://www.roblox.com/asset/?id=144931564"
-	Sky.StarCount = 1500
-	Sky.SunAngularSize = 5
-	Sky.SunTextureId = "rbxasset://sky/sun.jpg"
-	--At
-	At.Density = 0
-	At.Offset = 0
-	At.Color = Color3.fromRGB(199, 199, 5)
-	At.Color = Color3.fromRGB(92, 66, 6)
-	At.Glare = 1.67
-	At.Haze = 2.22
-	
-	
-	
-	frame = script.Parent
-	frame.Draggable = true
-	frame.Active = true
-	frame.Selectable = true
-	
-	
-	script.Parent:FindFirstChild("TextButton").Activated:Connect(function()
-		if toggol == false then
-			toggol = true
-			print("Now true")
-			script.Parent.Parent:FindFirstChild("Frame2").Visible = true
-		elseif toggol == true then
-			toggol = false
-			print("Now false")
-			script.Parent.Parent:FindFirstChild("Frame2").Visible = false
-		end
-	end)
-	
-	script.Parent.Parent:FindFirstChild("Frame2").TextButton.Activated:Connect(function()
-		script.Parent.Parent.Parent:FindFirstChild("Shader"):ClearAllChildren()
-		game.Lighting:ClearAllChildren()
-	end)
-	
-	script.Parent.Parent:FindFirstChild("Frame2").TextBox.FocusLost:Connect(function()
-		game:GetService("Players").LocalPlayer.PlayerScripts.GravityNum.Value = script.Parent.Parent:FindFirstChild("Frame2").TextBox.Text
-		print(script.Parent.Parent:FindFirstChild("Frame2").TextBox.Text)
-	end)
-end
-coroutine.wrap(ITUXXA_fake_script)()
+end)
+
+script.Parent.Parent:FindFirstChild("Frame2").TextBox.FocusLost:Connect(function()
+	game:GetService("Players").LocalPlayer.PlayerScripts.GravityNum.Value = script.Parent.Parent:FindFirstChild("Frame2").TextBox.Text
+	print(script.Parent.Parent:FindFirstChild("Frame2").TextBox.Text)
+end)
