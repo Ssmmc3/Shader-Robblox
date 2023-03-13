@@ -13,6 +13,9 @@ local Value3 = Instance.new("TextBox")
 local Value2 = Instance.new("TextBox")
 local TextButton2 = Instance.new("TextButton")
 local Reset = Instance.new("TextButton")
+local DOFEB = Instance.new("TextButton")
+local Tick = Instance.new("ImageLabel")
+local Cross = Instance.new("ImageLabel")
 
 --Properties:
 
@@ -56,9 +59,8 @@ TextLabel.TextWrapped = true
 Frame2.Name = "Frame2"
 Frame2.Parent = Shader
 Frame2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame2.Position = UDim2.new(0.0322213396, 0, 0.115044244, 0)
-Frame2.Size = UDim2.new(0, 276, 0, 521)
-Frame2.Visible = false
+Frame2.Position = UDim2.new(0.0322213396, 0, 0.115044251, 0)
+Frame2.Size = UDim2.new(0, 291, 0, 521)
 Frame2.Style = Enum.FrameStyle.DropShadow
 
 TextButton_2.Parent = Frame2
@@ -79,7 +81,7 @@ TextBox.BackgroundTransparency = 0.850
 TextBox.Position = UDim2.new(0.00724637695, 0, 0.00959692895, 0)
 TextBox.Size = UDim2.new(0, 200, 0, 50)
 TextBox.Font = Enum.Font.SourceSans
-TextBox.Text = "Gravity (flightpoint only)"
+TextBox.Text = "Gravity (Only For Flightpoint)"
 TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextBox.TextScaled = true
 TextBox.TextSize = 14.000
@@ -141,7 +143,7 @@ Reset.Name = "Reset"
 Reset.Parent = Frame2
 Reset.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Reset.BackgroundTransparency = 0.850
-Reset.Position = UDim2.new(0.657475948, 0, 0.249377832, 0)
+Reset.Position = UDim2.new(0.645411074, 0, 0.249377832, 0)
 Reset.Size = UDim2.new(0, 87, 0, 50)
 Reset.Font = Enum.Font.SourceSans
 Reset.Text = "Reset"
@@ -150,9 +152,39 @@ Reset.TextScaled = true
 Reset.TextSize = 14.000
 Reset.TextWrapped = true
 
+DOFEB.Name = "DOFEB"
+DOFEB.Parent = Frame2
+DOFEB.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DOFEB.BackgroundTransparency = 0.850
+DOFEB.Position = UDim2.new(0.00687285326, 0, 0.378317922, 0)
+DOFEB.Size = UDim2.new(0, 171, 0, 50)
+DOFEB.Font = Enum.Font.SourceSans
+DOFEB.Text = "Toggle Depth Of Field"
+DOFEB.TextColor3 = Color3.fromRGB(0, 0, 0)
+DOFEB.TextScaled = true
+DOFEB.TextSize = 14.000
+DOFEB.TextWrapped = true
+
+Tick.Name = "Tick"
+Tick.Parent = Frame2
+Tick.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Tick.BackgroundTransparency = 1.000
+Tick.Position = UDim2.new(0.643261492, 0, 0.37648803, 0)
+Tick.Size = UDim2.new(0, 44, 0, 41)
+Tick.Image = "rbxassetid://12778509724"
+
+Cross.Name = "Cross"
+Cross.Parent = Frame2
+Cross.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Cross.BackgroundTransparency = 1.000
+Cross.Position = UDim2.new(0.642281055, 0, 0.38715601, 0)
+Cross.Size = UDim2.new(0, 48, 0, 41)
+Cross.Visible = false
+Cross.Image = "rbxassetid://12778554034"
+
 -- Scripts:
 
-local function WAPZ_fake_script() -- Frame.LocalScript 
+local function LDWUL_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	game.Lighting:ClearAllChildren()
@@ -210,13 +242,10 @@ local function WAPZ_fake_script() -- Frame.LocalScript
 	At.Glare = 1.67
 	At.Haze = 2.22
 	
-	
-	
 	frame = script.Parent
 	frame.Draggable = true
 	frame.Active = true
 	frame.Selectable = true
-	
 	
 	script.Parent:FindFirstChild("TextButton").Activated:Connect(function()
 		if toggol == false then
@@ -261,7 +290,32 @@ local function WAPZ_fake_script() -- Frame.LocalScript
 		Cc.Saturation = 0.6
 		Cc.TintColor = Color3.fromRGB(255, 251, 201)
 	end)
+	toggel = true
+	Frame2.DOFEB.Activated:Connect(function()
+		if toggel == false then
+			toggel = true
+			Frame2.Tick.Visible = true
+			Frame2.Cross.Visible = false
+			print("Now true")
+			Dofe.Enabled = true
+		elseif toggel == true then
+			toggel = false
+			Frame2.Tick.Visible = false
+			Frame2.Cross.Visible = true
+			print("Now false")
+			Dofe.Enabled = false
+		end
+	end)
 	
 	
 end
-coroutine.wrap(WAPZ_fake_script)()
+coroutine.wrap(LDWUL_fake_script)()
+local function URDWGW_fake_script() -- Frame2.LocalScript 
+	local script = Instance.new('LocalScript', Frame2)
+
+	frame = script.Parent
+	frame.Draggable = true
+	frame.Active = true
+	frame.Selectable = true
+end
+coroutine.wrap(URDWGW_fake_script)()
