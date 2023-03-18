@@ -240,7 +240,7 @@ TextBox2.TextWrapped = true
 
 -- Scripts:
 
-local function VSIBCET_fake_script() -- Frame.LocalScript 
+local function VRVKBO_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	Cc = Instance.new("ColorCorrectionEffect")
@@ -376,11 +376,10 @@ local function VSIBCET_fake_script() -- Frame.LocalScript
 		print("Loaded")
 	end)
 	
-	--make a part and make it raimbow
 	
 end
-coroutine.wrap(VSIBCET_fake_script)()
-local function VOCM_fake_script() -- Frame2.LocalScript 
+coroutine.wrap(VRVKBO_fake_script)()
+local function EMYB_fake_script() -- Frame2.LocalScript 
 	local script = Instance.new('LocalScript', Frame2)
 
 	frame = script.Parent
@@ -388,8 +387,8 @@ local function VOCM_fake_script() -- Frame2.LocalScript
 	frame.Active = true
 	frame.Selectable = true
 end
-coroutine.wrap(VOCM_fake_script)()
-local function IQQIU_fake_script() -- TextBox_2.LocalScript 
+coroutine.wrap(EMYB_fake_script)()
+local function LPTLC_fake_script() -- TextBox_2.LocalScript 
 	local script = Instance.new('LocalScript', TextBox_2)
 
 	script.Parent.FocusLost:Connect(function()
@@ -405,4 +404,4 @@ local function IQQIU_fake_script() -- TextBox_2.LocalScript
 		wait()
 	end
 end
-coroutine.wrap(IQQIU_fake_script)()
+coroutine.wrap(LPTLC_fake_script)()
