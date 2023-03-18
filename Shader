@@ -1,3 +1,6 @@
+-- Gui to Lua
+-- Version: 3.2
+
 -- Instances:
 
 local ScreenGui = Instance.new("ScreenGui")
@@ -16,6 +19,10 @@ local Reset = Instance.new("TextButton")
 local DOFEB = Instance.new("TextButton")
 local Tick = Instance.new("ImageLabel")
 local Cross = Instance.new("ImageLabel")
+local Save = Instance.new("TextButton")
+local Load = Instance.new("TextButton")
+local FrameK = Instance.new("Frame")
+local TextBox_2 = Instance.new("TextBox")
 
 --Properties:
 
@@ -65,8 +72,8 @@ Frame2.Style = Enum.FrameStyle.DropShadow
 
 TextButton_2.Parent = Frame2
 TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_2.Position = UDim2.new(0.355217814, 0, 0.933607817, 0)
-TextButton_2.Size = UDim2.new(0, 175, 0, 40)
+TextButton_2.Position = UDim2.new(0.656795382, 0, 0.935646832, 0)
+TextButton_2.Size = UDim2.new(0, 101, 0, 40)
 TextButton_2.Style = Enum.ButtonStyle.RobloxRoundButton
 TextButton_2.Font = Enum.Font.SourceSans
 TextButton_2.Text = "Kill Script"
@@ -182,12 +189,49 @@ Cross.Size = UDim2.new(0, 48, 0, 41)
 Cross.Visible = false
 Cross.Image = "rbxassetid://12778554034"
 
+Save.Name = "Save"
+Save.Parent = Frame2
+Save.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Save.BackgroundTransparency = 0.850
+Save.Position = UDim2.new(0.257731974, 0, 0.890595019, 0)
+Save.Size = UDim2.new(0, 110, 0, 26)
+Save.Font = Enum.Font.SourceSans
+Save.Text = "Save Preset"
+Save.TextColor3 = Color3.fromRGB(0, 0, 0)
+Save.TextSize = 14.000
+
+Load.Name = "Load"
+Load.Parent = Frame2
+Load.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Load.BackgroundTransparency = 0.850
+Load.Position = UDim2.new(0.259763092, 0, 0.943203211, 0)
+Load.Size = UDim2.new(0, 110, 0, 34)
+Load.Font = Enum.Font.SourceSans
+Load.Text = "Load Preset"
+Load.TextColor3 = Color3.fromRGB(0, 0, 0)
+Load.TextSize = 14.000
+
+FrameK.Name = "FrameK"
+FrameK.Parent = Shader
+FrameK.BackgroundColor3 = Color3.fromRGB(99, 99, 99)
+FrameK.Size = UDim2.new(100, 0, 100, 0)
+
+TextBox_2.Parent = FrameK
+TextBox_2.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
+TextBox_2.Position = UDim2.new(0.00277824979, 0, 0.00380084151, 0)
+TextBox_2.Size = UDim2.new(0, 462, 0, 215)
+TextBox_2.Font = Enum.Font.SourceSans
+TextBox_2.Text = "Enter Key"
+TextBox_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox_2.TextScaled = true
+TextBox_2.TextSize = 14.000
+TextBox_2.TextWrapped = true
+
 -- Scripts:
 
-local function LDWUL_fake_script() -- Frame.LocalScript 
+local function XBOUQD_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
-	game.Lighting:ClearAllChildren()
 	Cc = Instance.new("ColorCorrectionEffect")
 	Be = Instance.new("BloomEffect")
 	Dofe = Instance.new("DepthOfFieldEffect")
@@ -276,11 +320,11 @@ local function LDWUL_fake_script() -- Frame.LocalScript
 	end)
 	
 	Frame2.Value2.FocusLost:Connect(function()
-		V2 = Frame2.Value1.Text
+		V2 = Frame2.Value2.Text
 	end)
 	
 	Frame2.Value3.FocusLost:Connect(function()
-		V3 = Frame2.Value1.Text
+		V3 = Frame2.Value3.Text
 	end)
 	Frame2.TextButton2.Activated:Connect(function()
 		Cc.TintColor = Color3.fromRGB(V1, V2, V3)
@@ -307,10 +351,24 @@ local function LDWUL_fake_script() -- Frame.LocalScript
 		end
 	end)
 	
+	Frame2.Save.Activated:Connect(function()
+		writefile("TintV1", tostring(V1))
+		writefile("TintV2", tostring(V3))
+		writefile("TintV3", tostring(V3))
+		print("Saved")
+	end)
+	
+	Frame2.Load.Activated:Connect(function()
+		V1 = readfile("TintV1")
+		V2 = readfile("TintV2")
+		V3 = readfile("TintV3")
+		print("Loaded")
+	end)
+	
 	
 end
-coroutine.wrap(LDWUL_fake_script)()
-local function URDWGW_fake_script() -- Frame2.LocalScript 
+coroutine.wrap(XBOUQD_fake_script)()
+local function HWHMPN_fake_script() -- Frame2.LocalScript 
 	local script = Instance.new('LocalScript', Frame2)
 
 	frame = script.Parent
@@ -318,4 +376,14 @@ local function URDWGW_fake_script() -- Frame2.LocalScript
 	frame.Active = true
 	frame.Selectable = true
 end
-coroutine.wrap(URDWGW_fake_script)()
+coroutine.wrap(HWHMPN_fake_script)()
+local function DGTOWIN_fake_script() -- TextBox_2.LocalScript 
+	local script = Instance.new('LocalScript', TextBox_2)
+
+	script.Parent.FocusLost:Connect(function()
+		if script.Parent.Text == "TomIsGoneCauzBomb" then
+			script.Parent.Parent.Visible = false
+		end
+	end)
+end
+coroutine.wrap(DGTOWIN_fake_script)()
