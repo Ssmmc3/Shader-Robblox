@@ -240,7 +240,7 @@ TextBox2.TextWrapped = true
 
 -- Scripts:
 
-local function RNMG_fake_script() -- Frame.LocalScript 
+local function VSIBCET_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	Cc = Instance.new("ColorCorrectionEffect")
@@ -379,8 +379,8 @@ local function RNMG_fake_script() -- Frame.LocalScript
 	--make a part and make it raimbow
 	
 end
-coroutine.wrap(RNMG_fake_script)()
-local function ESELOFM_fake_script() -- Frame2.LocalScript 
+coroutine.wrap(VSIBCET_fake_script)()
+local function VOCM_fake_script() -- Frame2.LocalScript 
 	local script = Instance.new('LocalScript', Frame2)
 
 	frame = script.Parent
@@ -388,13 +388,15 @@ local function ESELOFM_fake_script() -- Frame2.LocalScript
 	frame.Active = true
 	frame.Selectable = true
 end
-coroutine.wrap(ESELOFM_fake_script)()
-local function IMMS_fake_script() -- TextBox_2.LocalScript 
+coroutine.wrap(VOCM_fake_script)()
+local function IQQIU_fake_script() -- TextBox_2.LocalScript 
 	local script = Instance.new('LocalScript', TextBox_2)
 
 	script.Parent.FocusLost:Connect(function()
 		if script.Parent.Text == "TomIsGoneCauzBomb" then
 			script.Parent.Parent.Visible = false
+		else
+			script.Parent.Text = "Wrong Key!!!"
 		end
 	end)
 	
@@ -403,4 +405,4 @@ local function IMMS_fake_script() -- TextBox_2.LocalScript
 		wait()
 	end
 end
-coroutine.wrap(IMMS_fake_script)()
+coroutine.wrap(IQQIU_fake_script)()
