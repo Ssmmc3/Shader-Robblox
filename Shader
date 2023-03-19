@@ -241,7 +241,6 @@ FrameK.Name = "FrameK"
 FrameK.Parent = Shader
 FrameK.BackgroundColor3 = Color3.fromRGB(99, 99, 99)
 FrameK.Size = UDim2.new(100, 0, 100, 0)
-FrameK.Visible = true
 
 TextBox_2.Parent = FrameK
 TextBox_2.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
@@ -269,7 +268,7 @@ TextBox2.TextWrapped = true
 
 -- Scripts:
 
-local function ZUVCIB_fake_script() -- Frame.LocalScript 
+local function HOUSXA_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	Cc = Instance.new("ColorCorrectionEffect")
@@ -418,8 +417,8 @@ local function ZUVCIB_fake_script() -- Frame.LocalScript
 		Dofe.FocusDistance = 75.86
 	end)
 end
-coroutine.wrap(ZUVCIB_fake_script)()
-local function BEFNB_fake_script() -- Frame2.LocalScript 
+coroutine.wrap(HOUSXA_fake_script)()
+local function YLXB_fake_script() -- Frame2.LocalScript 
 	local script = Instance.new('LocalScript', Frame2)
 
 	frame = script.Parent
@@ -427,13 +426,18 @@ local function BEFNB_fake_script() -- Frame2.LocalScript
 	frame.Active = true
 	frame.Selectable = true
 end
-coroutine.wrap(BEFNB_fake_script)()
-local function XLIWI_fake_script() -- TextBox_2.LocalScript 
+coroutine.wrap(YLXB_fake_script)()
+local function QPZPZA_fake_script() -- TextBox_2.LocalScript 
 	local script = Instance.new('LocalScript', TextBox_2)
 
+	if isfile("123456543wsddft.txt") then
+		script.Parent.Parent.Visible = false
+	end
+	
 	script.Parent.FocusLost:Connect(function()
 		if script.Parent.Text == "TomIsGoneCauzBomb" then
 			script.Parent.Parent.Visible = false
+			writefile("123456543wsddft.txt", "Testing!")
 		else
 			script.Parent.Text = "Wrong Key!!!"
 		end
@@ -444,4 +448,4 @@ local function XLIWI_fake_script() -- TextBox_2.LocalScript
 		wait()
 	end
 end
-coroutine.wrap(XLIWI_fake_script)()
+coroutine.wrap(QPZPZA_fake_script)()
