@@ -1,6 +1,3 @@
--- Gui to Lua
--- Version: 3.2
-
 -- Instances:
 
 local ScreenGui = Instance.new("ScreenGui")
@@ -196,8 +193,8 @@ Save.Name = "Save"
 Save.Parent = Frame2
 Save.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Save.BackgroundTransparency = 0.850
-Save.Position = UDim2.new(0.257731974, 0, 0.890595019, 0)
-Save.Size = UDim2.new(0, 110, 0, 26)
+Save.Position = UDim2.new(0.258719027, 0, 0.899720371, 0)
+Save.Size = UDim2.new(0, 110, 0, 21)
 Save.Font = Enum.Font.SourceSans
 Save.Text = "Save Preset"
 Save.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -244,6 +241,7 @@ FrameK.Name = "FrameK"
 FrameK.Parent = Shader
 FrameK.BackgroundColor3 = Color3.fromRGB(99, 99, 99)
 FrameK.Size = UDim2.new(100, 0, 100, 0)
+FrameK.Visible = false
 
 TextBox_2.Parent = FrameK
 TextBox_2.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
@@ -271,7 +269,7 @@ TextBox2.TextWrapped = true
 
 -- Scripts:
 
-local function VQRP_fake_script() -- Frame.LocalScript 
+local function ZUVCIB_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	Cc = Instance.new("ColorCorrectionEffect")
@@ -420,8 +418,8 @@ local function VQRP_fake_script() -- Frame.LocalScript
 		Dofe.FocusDistance = 75.86
 	end)
 end
-coroutine.wrap(VQRP_fake_script)()
-local function NFVSWDX_fake_script() -- Frame2.LocalScript 
+coroutine.wrap(ZUVCIB_fake_script)()
+local function BEFNB_fake_script() -- Frame2.LocalScript 
 	local script = Instance.new('LocalScript', Frame2)
 
 	frame = script.Parent
@@ -429,8 +427,8 @@ local function NFVSWDX_fake_script() -- Frame2.LocalScript
 	frame.Active = true
 	frame.Selectable = true
 end
-coroutine.wrap(NFVSWDX_fake_script)()
-local function ONRFS_fake_script() -- TextBox_2.LocalScript 
+coroutine.wrap(BEFNB_fake_script)()
+local function XLIWI_fake_script() -- TextBox_2.LocalScript 
 	local script = Instance.new('LocalScript', TextBox_2)
 
 	script.Parent.FocusLost:Connect(function()
@@ -446,4 +444,4 @@ local function ONRFS_fake_script() -- TextBox_2.LocalScript
 		wait()
 	end
 end
-coroutine.wrap(ONRFS_fake_script)()
+coroutine.wrap(XLIWI_fake_script)()
