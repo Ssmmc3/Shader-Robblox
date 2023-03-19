@@ -241,7 +241,7 @@ FrameK.Name = "FrameK"
 FrameK.Parent = Shader
 FrameK.BackgroundColor3 = Color3.fromRGB(99, 99, 99)
 FrameK.Size = UDim2.new(100, 0, 100, 0)
-FrameK.Visible = false
+FrameK.Visible = true
 
 TextBox_2.Parent = FrameK
 TextBox_2.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
