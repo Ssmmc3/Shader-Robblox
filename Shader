@@ -396,7 +396,7 @@ local function ZUVCIB_fake_script() -- Frame.LocalScript
 	Frame2.Save.Activated:Connect(function()
 		print("Saved")
 		writefile("TintV1.txt", tostring(V1))
-		writefile("TintV2.txt", tostring(V3))
+		writefile("TintV2.txt", tostring(V2))
 		writefile("TintV3.txt", tostring(V3))
 	end)
 	
