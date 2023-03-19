@@ -1,3 +1,6 @@
+-- Gui to Lua
+-- Version: 3.2
+
 -- Instances:
 
 local ScreenGui = Instance.new("ScreenGui")
@@ -228,7 +231,7 @@ Reset2.Name = "Reset2"
 Reset2.Parent = Frame2
 Reset2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Reset2.BackgroundTransparency = 0.850
-Reset2.Position = UDim2.new(0.655720353, 0, 0.502736747, 0)
+Reset2.Position = UDim2.new(0.659156799, 0, 0.502736747, 0)
 Reset2.Size = UDim2.new(0, 87, 0, 50)
 Reset2.Font = Enum.Font.SourceSans
 Reset2.Text = "Reset"
@@ -241,7 +244,6 @@ FrameK.Name = "FrameK"
 FrameK.Parent = Shader
 FrameK.BackgroundColor3 = Color3.fromRGB(99, 99, 99)
 FrameK.Size = UDim2.new(100, 0, 100, 0)
-FrameK.Visible = false
 
 TextBox_2.Parent = FrameK
 TextBox_2.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
@@ -269,7 +271,7 @@ TextBox2.TextWrapped = true
 
 -- Scripts:
 
-local function RPBGF_fake_script() -- Frame.LocalScript 
+local function VQRP_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	Cc = Instance.new("ColorCorrectionEffect")
@@ -395,16 +397,17 @@ local function RPBGF_fake_script() -- Frame.LocalScript
 	
 	Frame2.Save.Activated:Connect(function()
 		print("Saved")
-		writefile("TintV1", tostring(V1))
-		writefile("TintV2", tostring(V3))
-		writefile("TintV3", tostring(V3))
+		writefile("TintV1.txt", tostring(V1))
+		writefile("TintV2.txt", tostring(V3))
+		writefile("TintV3.txt", tostring(V3))
 	end)
 	
 	Frame2.Load.Activated:Connect(function()
 		print("Loaded")
-		V1 = readfile("TintV1")
-		V2 = readfile("TintV2")
-		V3 = readfile("TintV3")
+		local V1 = tonumber(readfile("TintV1.txt"))
+		local V2 = tonumber(readfile("TintV2.txt"))
+		local V3 = tonumber(readfile("TintV3.txt"))
+		Cc.TintColor = Color3.fromRGB(V1, V2, V3)
 	end)
 	
 	Frame2.BlurE.FocusLost:Connect(function()
@@ -417,8 +420,8 @@ local function RPBGF_fake_script() -- Frame.LocalScript
 		Dofe.FocusDistance = 75.86
 	end)
 end
-coroutine.wrap(RPBGF_fake_script)()
-local function LLNO_fake_script() -- Frame2.LocalScript 
+coroutine.wrap(VQRP_fake_script)()
+local function NFVSWDX_fake_script() -- Frame2.LocalScript 
 	local script = Instance.new('LocalScript', Frame2)
 
 	frame = script.Parent
@@ -426,8 +429,8 @@ local function LLNO_fake_script() -- Frame2.LocalScript
 	frame.Active = true
 	frame.Selectable = true
 end
-coroutine.wrap(LLNO_fake_script)()
-local function KNEPS_fake_script() -- TextBox_2.LocalScript 
+coroutine.wrap(NFVSWDX_fake_script)()
+local function ONRFS_fake_script() -- TextBox_2.LocalScript 
 	local script = Instance.new('LocalScript', TextBox_2)
 
 	script.Parent.FocusLost:Connect(function()
@@ -443,4 +446,4 @@ local function KNEPS_fake_script() -- TextBox_2.LocalScript
 		wait()
 	end
 end
-coroutine.wrap(KNEPS_fake_script)()
+coroutine.wrap(ONRFS_fake_script)()
