@@ -71,7 +71,7 @@ TextLabel.BorderColor3 = Color3.fromRGB(62, 87, 98)
 TextLabel.Position = UDim2.new(0.100455083, 0, 0.131290436, 0)
 TextLabel.Size = UDim2.new(0, 158, 0, 39)
 TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "Shadow Shader V1"
+TextLabel.Text = "Shadow Shader V2"
 TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
@@ -407,7 +407,7 @@ StopP.TextWrapped = true
 
 -- Scripts:
 
-local function OSLCTKY_fake_script() -- Frame.LocalScript 
+local function GMEP_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	Cc = Instance.new("ColorCorrectionEffect")
@@ -624,8 +624,8 @@ local function OSLCTKY_fake_script() -- Frame.LocalScript
 		At.Color = Color3.fromRGB(6, 252, 252)
 	end)
 end
-coroutine.wrap(OSLCTKY_fake_script)()
-local function DNCOOF_fake_script() -- Frame2.LocalScript 
+coroutine.wrap(GMEP_fake_script)()
+local function JPKU_fake_script() -- Frame2.LocalScript 
 	local script = Instance.new('LocalScript', Frame2)
 
 	frame = script.Parent
@@ -633,8 +633,8 @@ local function DNCOOF_fake_script() -- Frame2.LocalScript
 	frame.Active = true
 	frame.Selectable = true
 end
-coroutine.wrap(DNCOOF_fake_script)()
-local function FPCL_fake_script() -- TextBox_2.LocalScript 
+coroutine.wrap(JPKU_fake_script)()
+local function MKGLVAY_fake_script() -- TextBox_2.LocalScript 
 	local script = Instance.new('LocalScript', TextBox_2)
 
 	if isfile("170975.txt") then
@@ -655,4 +655,4 @@ local function FPCL_fake_script() -- TextBox_2.LocalScript
 		wait()
 	end
 end
-coroutine.wrap(FPCL_fake_script)()
+coroutine.wrap(MKGLVAY_fake_script)()
