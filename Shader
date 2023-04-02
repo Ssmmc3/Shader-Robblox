@@ -3,6 +3,7 @@
 
 -- Instances:
 
+local ShaderGui = Instance.new("ScreenGui")
 local Shader = Instance.new("Folder")
 local Frame = Instance.new("Frame")
 local TextButton = Instance.new("TextButton")
@@ -38,8 +39,12 @@ local StopP = Instance.new("TextButton")
 
 --Properties:
 
+ShaderGui.Name = "ShaderGui"
+ShaderGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ShaderGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
 Shader.Name = "Shader"
-Shader.Parent = game.StarterGui.ScreenGui
+Shader.Parent = ShaderGui
 
 Frame.Parent = Shader
 Frame.BackgroundColor3 = Color3.fromRGB(62, 88, 98)
@@ -402,7 +407,7 @@ StopP.TextWrapped = true
 
 -- Scripts:
 
-local function QTSQAE_fake_script() -- Frame.LocalScript 
+local function OSLCTKY_fake_script() -- Frame.LocalScript 
 	local script = Instance.new('LocalScript', Frame)
 
 	Cc = Instance.new("ColorCorrectionEffect")
@@ -619,8 +624,8 @@ local function QTSQAE_fake_script() -- Frame.LocalScript
 		At.Color = Color3.fromRGB(6, 252, 252)
 	end)
 end
-coroutine.wrap(QTSQAE_fake_script)()
-local function RIQBQJO_fake_script() -- Frame2.LocalScript 
+coroutine.wrap(OSLCTKY_fake_script)()
+local function DNCOOF_fake_script() -- Frame2.LocalScript 
 	local script = Instance.new('LocalScript', Frame2)
 
 	frame = script.Parent
@@ -628,8 +633,8 @@ local function RIQBQJO_fake_script() -- Frame2.LocalScript
 	frame.Active = true
 	frame.Selectable = true
 end
-coroutine.wrap(RIQBQJO_fake_script)()
-local function EUBDFGR_fake_script() -- TextBox_2.LocalScript 
+coroutine.wrap(DNCOOF_fake_script)()
+local function FPCL_fake_script() -- TextBox_2.LocalScript 
 	local script = Instance.new('LocalScript', TextBox_2)
 
 	if isfile("170975.txt") then
@@ -650,4 +655,4 @@ local function EUBDFGR_fake_script() -- TextBox_2.LocalScript
 		wait()
 	end
 end
-coroutine.wrap(EUBDFGR_fake_script)()
+coroutine.wrap(FPCL_fake_script)()
